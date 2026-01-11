@@ -1,6 +1,6 @@
 # Sample Quiz Repository
 
-[![Open in Quiz Player](https://img.shields.io/badge/Open_in-Quiz_Player-blue?style=for-the-badge&logo=google-chrome)](https://quiz-player.netlify.app/quiz.html?source=janch-tech/quiz-player-sample-quiz)
+[![Open in Quiz Player](https://img.shields.io/badge/Open_in-Quiz_Player-blue?style=for-the-badge&logo=https://quiz-player.netlify.app/favicon.svg)](https://quiz-player.netlify.app/quiz.html?source=janch-tech/quiz-player-sample-quiz)
 
 This is a sample quiz repository demonstrating the Quiz Player format.
 
@@ -9,25 +9,9 @@ This is a sample quiz repository demonstrating the Quiz Player format.
 ## Structure
 
 ```
-sample-question-repo/
+.
 ├── quiz.json              # Quiz manifest
 ├── questions/             # Question files
-│   ├── q1-typeof.json
-│   ├── q2-primitives.json
-│   ├── q3-hoisting.json
-│   └── q4-closures.json
+│   ├── ...
 └── assets/               # Images and media (optional)
 ```
-
-## Questions Included
-
-1. **typeof null** - Single-choice question about JavaScript type quirks
-2. **Primitive Types** - Multi-select question (4 correct answers)
-3. **Hoisting** - Variable hoisting with code example
-4. **Closures** - Closure behavior with code example
-
-Each question includes:
-- Markdown-formatted explanations
-- Code snippets (backticks in question text)
-- Category tags
-- Mix of single and multi-select formats
