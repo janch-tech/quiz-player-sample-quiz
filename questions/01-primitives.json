@@ -1,0 +1,14 @@
+{
+  "id": "q-primitives",
+  "question": "Which of the following are JavaScript primitive types? (Select all that apply)",
+  "options": [
+    { "text": "string", "correct": true },
+    { "text": "array", "correct": false },
+    { "text": "number", "correct": true },
+    { "text": "object", "correct": false },
+    { "text": "boolean", "correct": true },
+    { "text": "symbol", "correct": true }
+  ],
+  "explanation": "JavaScript has **7 primitive types**:\n\n1. `string`\n2. `number`\n3. `boolean`\n4. `null`\n5. `undefined`\n6. `symbol` (ES6)\n7. `bigint` (ES2020)\n\nArrays and objects are **reference types**, not primitives.",
+  "category": "JavaScript Types"
+}

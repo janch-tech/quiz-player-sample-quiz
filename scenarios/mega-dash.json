@@ -1,0 +1,9 @@
+{
+    "id": "scenario-megadash",
+    "tabs": [
+        {
+            "title": "Scenario",
+            "content": "### Case Study: MegaDash\n\nMegaDash is a real-time analytics dashboard used by stock traders.\n\n**Current Architecture**:\n- React frontend with Redux.\n- WebSocket connection for real-time tickers.\n- Updates occur 50 times per second.\n\n**Problem**:\nUsers complain that the UI becomes unresponsive (janky) during high-traffic periods."
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+{
+  "title": "JavaScript Fundamentals Sample Quiz",
+  "description": "A comprehensive set of sample questions demonstrating all quiz features.",
+  "slug": "javascript-fundamentals",
+  "category": "JavaScript",
+  "preview_image": "sample-question-repo/assets/images/event_loop_diagram.svg",
+  "logo_url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
+  "questions": [
+    "questions/00-typeof.json",
+    "questions/01-primitives.json",
+    "questions/02-hoisting.json",
+    "questions/03-closures.json",
+    "questions/04-markdown-test.json",
+    "questions/05-image.json",
+    "questions/06-exhibit.json",
+    "questions/07-case-study-js-perf-q1.json",
+    "questions/08-case-study-js-perf-q2.json",
+    "questions/09-ordering.json",
+    "questions/10-hotspot.json"
+  ]
+}

@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#f8f9fa" />
+  
+  <!-- Titles -->
+  <text x="400" y="40" font-family="Arial" font-size="24" text-anchor="middle" font-weight="bold" fill="#333">JavaScript Event Loop</text>
+
+  <!-- Definitions for Arrow Marker -->
+  <defs>
+    <!-- userSpaceOnUse ensures the marker stays 10x10 regardless of stroke width -->
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L0,6 L9,3 z" fill="#666" />
+    </marker>
+    <marker id="arrow-orange" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L0,6 L9,3 z" fill="#ff9800" />
+    </marker>
+  </defs>
+
+  <!-- 1. Call Stack (Left) -->
+  <g transform="translate(50, 100)">
+    <rect x="0" y="0" width="140" height="280" fill="white" stroke="#333" stroke-width="2" rx="5"/>
+    <text x="70" y="-15" text-anchor="middle" font-family="Arial" font-weight="bold" fill="#0078D4">Call Stack</text>
+    
+    <!-- Stack Frames -->
+    <rect x="10" y="240" width="120" height="30" fill="#E6F2FA" rx="3"/>
+    <text x="70" y="260" text-anchor="middle" font-family="Arial" font-size="12">main()</text>
+    <rect x="10" y="200" width="120" height="30" fill="#E6F2FA" rx="3"/>
+    <text x="70" y="220" text-anchor="middle" font-family="Arial" font-size="12">console.log()</text>
+  </g>
+
+  <!-- 2. Web APIs (Center-Top) -->
+  <g transform="translate(350, 100)">
+    <text x="90" y="-15" text-anchor="middle" font-family="Arial" font-weight="bold" fill="#28a745">Web APIs</text>
+    <rect x="0" y="0" width="180" height="150" fill="white" stroke="#333" stroke-width="2" stroke-dasharray="5,5" rx="5"/>
+    <text x="90" y="40" text-anchor="middle" font-family="Arial" font-size="12" fill="#555">DOM (Click, Load)</text>
+    <text x="90" y="80" text-anchor="middle" font-family="Arial" font-size="12" fill="#555">setTimeout / Interval</text>
+    <text x="90" y="120" text-anchor="middle" font-family="Arial" font-size="12" fill="#555">Fetch (Network)</text>
+  </g>
+
+  <!-- 3. Queues (Right side) -->
+  <g transform="translate(350, 300)">
+    <!-- Microtask Queue -->
+    <text x="-10" y="25" text-anchor="end" font-family="Arial" font-weight="bold" font-size="14" fill="#6f42c1">Microtask Q</text>
+    <rect x="0" y="0" width="300" height="40" fill="#f3f0ff" stroke="#6f42c1" stroke-width="2" rx="5"/>
+    
+    <rect x="10" y="5" width="80" height="30" fill="#e0d4fc" rx="3"/>
+    <text x="50" y="25" text-anchor="middle" font-family="Arial" font-size="11">Promise.then</text>
+    <rect x="100" y="5" width="80" height="30" fill="#e0d4fc" rx="3"/>
+    <text x="140" y="25" text-anchor="middle" font-family="Arial" font-size="11">queueMicro</text>
+
+    <text x="310" y="25" font-family="Arial" font-size="12" fill="#6f42c1" font-weight="bold" alignment-baseline="middle">(High Priority)</text>
+
+    <!-- Callback Queue -->
+    <text x="-10" y="105" text-anchor="end" font-family="Arial" font-weight="bold" font-size="14" fill="#dc3545">Callback Q</text>
+    <rect x="0" y="80" width="300" height="40" fill="#fff5f5" stroke="#dc3545" stroke-width="2" rx="5"/>
+    
+    <rect x="10" y="85" width="80" height="30" fill="#ffcccc" rx="3"/>
+    <text x="50" y="105" text-anchor="middle" font-family="Arial" font-size="11">setTimeout</text>
+    <rect x="100" y="85" width="80" height="30" fill="#ffcccc" rx="3"/>
+    <text x="140" y="105" text-anchor="middle" font-family="Arial" font-size="11">click event</text>
+  </g>
+
+  <!-- 4. Event Loop (Bottom Left mechanism) -->
+  <g transform="translate(110, 420)">
+    <text x="0" y="5" text-anchor="middle" font-family="Arial" font-weight="bold" font-size="14" fill="#ff9800">Event Loop</text>
+    <!-- Rotate arrows -->
+    <path d="M -30 -20 A 40 40 0 0 1 30 -20" stroke="#ff9800" stroke-width="4" fill="none" marker-end="url(#arrow-orange)"/>
+    <path d="M 30 20 A 40 40 0 0 1 -30 20" stroke="#ff9800" stroke-width="4" fill="none" marker-end="url(#arrow-orange)" />
+  </g>
+
+  <!-- Connections -->
+  
+  <!-- CallStack to WebAPI (Dashed) -->
+  <path d="M 190 150 L 350 150" stroke="#666" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="5,5"/>
+
+  <!-- WebAPI to Queues (Dashed) -->
+  <!-- Microtask -->
+  <path d="M 530 175 L 560 175 L 560 290" stroke="#666" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="5,5" fill="none"/>
+  <!-- Callback -->
+  <path d="M 440 250 L 440 290" stroke="#666" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="5,5" fill="none"/>
+
+  <!-- Queues to CallStack (Solid - Event Loop Action) -->
+  <!-- Move labels further left to avoid line overlap or route lines differently -->
+  <!-- Microtask Result -->
+  <path d="M 350 320 L 250 320 L 250 240 L 190 240" stroke="#6f42c1" stroke-width="2" marker-end="url(#arrow)" fill="none"/>
+  
+  <!-- Callback Result -->
+  <path d="M 350 400 L 230 400 L 230 350 L 190 350" stroke="#dc3545" stroke-width="2" marker-end="url(#arrow)" fill="none"/>
+
+</svg>

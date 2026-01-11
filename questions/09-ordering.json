@@ -1,0 +1,19 @@
+{
+    "id": "q-ordering-event-loop",
+    "category": "JavaScript Internals",
+    "type": "ordering",
+    "question": "Arrange the phases of the **JavaScript Event Loop** processing order, starting from when a script first runs.",
+    "items": [
+        "Execute Microtasks (Promises)",
+        "Execute Macrotask (setTimeout/IO)",
+        "Execute Call Stack (Synchronous Code)",
+        "Render UI Updates"
+    ],
+    "correctOrder": [
+        "Execute Call Stack (Synchronous Code)",
+        "Execute Microtasks (Promises)",
+        "Render UI Updates",
+        "Execute Macrotask (setTimeout/IO)"
+    ],
+    "explanation": "1. **Synchronous code** runs first (Call Stack).\n2. **Microtasks** (Promises, queueMicrotask) run immediately after the stack clears.\n3. **UI Rendering** happens (if needed).\n4. Finally, the next **Macrotask** (setTimeout, I/O) is picked from the callback queue."
+}

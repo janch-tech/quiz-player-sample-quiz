@@ -1,0 +1,26 @@
+{
+    "id": "js-markdown-test",
+    "category": "JavaScript",
+    "context": "### Template Literals\n\nJavaScript ES6 introduced **Template Literals** using backticks (` `).\n\nThey allow:\n- String interpolation: `${variable}`\n- Multi-line strings\n- Expression evaluation",
+    "question": "What is the output of the following code?\n\n```javascript\nconst item = \"Apple\";\nconst price = 1.25;\nconsole.log(`One ${item} costs $${price * 2}`);\n```",
+    "options": [
+        {
+            "text": "One Apple costs $2.5",
+            "correct": true
+        },
+        {
+            "text": "One Apple costs $${price * 2}",
+            "correct": false
+        },
+        {
+            "text": "One Apple costs $1.25",
+            "correct": false
+        },
+        {
+            "text": "Syntax Error",
+            "correct": false
+        }
+    ],
+    "explanation": "The expression `${price * 2}` is evaluated to `2.5`. The final string is `\"One Apple costs $2.5\"`.",
+    "type": "Multiple Choice"
+}

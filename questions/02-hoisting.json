@@ -1,0 +1,12 @@
+{
+  "id": "q-hoisting",
+  "question": "What will be logged to the console?\n\n```javascript\nconsole.log(x);\nvar x = 5;\n```",
+  "options": [
+    { "text": "5", "correct": false },
+    { "text": "undefined", "correct": true },
+    { "text": "ReferenceError", "correct": false },
+    { "text": "null", "correct": false }
+  ],
+  "explanation": "Due to **hoisting**, the declaration `var x` is moved to the top of the scope, but the initialization (`= 5`) remains in place.\n\nThe code is interpreted as:\n```javascript\nvar x;        // Declaration hoisted\nconsole.log(x);  // undefined\nx = 5;        // Assignment stays here\n```\n\nThis is why `console.log(x)` outputs `undefined` rather than throwing a `ReferenceError`.",
+  "category": "JavaScript Scope"
+}

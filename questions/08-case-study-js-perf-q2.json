@@ -1,0 +1,31 @@
+{
+    "id": "case-study-js-perf-2",
+    "category": "High Performance JS",
+    "caseStudy": "public/sample-question-repo/scenarios/mega-dash.json",
+    "tabs": [
+        {
+            "title": "Proposed Fix",
+            "content": "```javascript\n// Proposed Solution A\nconst throttle = (func, limit) => {\n  // ... implementation ...\n}\n\nsocket.on('ticker', throttle((data) => {\n  store.dispatch({ type: 'UPDATE_TICKER', payload: data });\n}, 1000));\n```"
+        }
+    ],
+    "question": "The team proposes **Solution A** (throttling updates to once per second). What is the primary **downside** of this approach for a *real-time* trading application?",
+    "options": [
+        {
+            "text": "It increases CPU usage significantly.",
+            "correct": false
+        },
+        {
+            "text": "It introduces data staleness, potentially hiding rapid price fluctuations.",
+            "correct": true
+        },
+        {
+            "text": "It will cause the WebSocket connection to drop.",
+            "correct": false
+        },
+        {
+            "text": "Throttling is not supported in modern browsers.",
+            "correct": false
+        }
+    ],
+    "explanation": "While throttling fixes the performance issue, it means the UI only updates once per second. In a high-frequency trading tool, missing rapid price changes (volatility) between updates is a critical functional regression."
+}

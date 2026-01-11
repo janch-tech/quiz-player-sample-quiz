@@ -1,0 +1,39 @@
+{
+    "id": "q-hotspot-memory",
+    "category": "JavaScript Performance",
+    "type": "hotspot",
+    "question": "Click on the column header in the Chrome DevTools Memory profile that indicates the **total memory used by all reachable objects**.",
+    "image": "public/sample-question-repo/assets/images/heap_snapshot.svg",
+    "zones": [
+        {
+            "x1": 0,
+            "y1": 17,
+            "x2": 30,
+            "y2": 22,
+            "label": "Constructor"
+        },
+        {
+            "x1": 30,
+            "y1": 17,
+            "x2": 49,
+            "y2": 22,
+            "label": "Distance"
+        },
+        {
+            "x1": 49,
+            "y1": 17,
+            "x2": 67,
+            "y2": 22,
+            "label": "Shallow Size"
+        },
+        {
+            "x1": 67,
+            "y1": 17,
+            "x2": 90,
+            "y2": 22,
+            "label": "Retained Size"
+        }
+    ],
+    "correctZone": 3,
+    "explanation": "You should look at the **'Retained Size'** column. The Shallow size is just the object itself, but Retained Size includes everything kept alive by it—making it the best measure of total memory impact."
+}

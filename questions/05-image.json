@@ -1,0 +1,27 @@
+{
+    "id": "q-event-loop-visual",
+    "category": "JavaScript Internals",
+    "question": "Based on the diagram below, which queue has higher priority in the Event Loop processing order?",
+    "images": [
+        "public/sample-question-repo/assets/images/event_loop_diagram.svg"
+    ],
+    "options": [
+        {
+            "text": "Callback Queue (Macrotasks)",
+            "correct": false
+        },
+        {
+            "text": "Microtask Queue (Promises, process.nextTick)",
+            "correct": true
+        },
+        {
+            "text": "They have equal priority",
+            "correct": false
+        },
+        {
+            "text": "Web APIs Queue",
+            "correct": false
+        }
+    ],
+    "explanation": "The **Microtask Queue** has higher priority. After every macrotask (from the Callback Queue) is executed, the Event Loop checks the Microtask Queue and executes *all* tasks in it before moving to the next macrotask."
+}

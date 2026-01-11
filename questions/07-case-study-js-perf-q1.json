@@ -1,0 +1,35 @@
+{
+    "id": "case-study-js-perf-1",
+    "category": "High Performance JS",
+    "caseStudy": "public/sample-question-repo/scenarios/mega-dash.json",
+    "tabs": [
+        {
+            "title": "Code Snippet",
+            "content": "```javascript\n// WebSocket handler\nsocket.on('ticker', (data) => {\n  // Dispatches action for EVERY update\n  store.dispatch({ type: 'UPDATE_TICKER', payload: data });\n});\n\n// Reducer\ncase 'UPDATE_TICKER':\n  return { ...state, tickers: { ...state.tickers, [data.id]: data } };\n```"
+        },
+        {
+            "title": "Requirements",
+            "content": "- Must support 60fps rendering.\n- Latency must stay under 100ms.\n- CPU usage should be minimized."
+        }
+    ],
+    "question": "Based on the **Scenario** and **Code Snippet**, what is the primary bottleneck causing the UI unresponsiveness?",
+    "options": [
+        {
+            "text": "The WebSocket connection is too slow.",
+            "correct": false
+        },
+        {
+            "text": "Dispatching Redux actions 50 times/sec causes excessive re-renders.",
+            "correct": true
+        },
+        {
+            "text": "The object spread operator (`...`) is too slow for modern browsers.",
+            "correct": false
+        },
+        {
+            "text": "JavaScript cannot handle 50 updates per second.",
+            "correct": false
+        }
+    ],
+    "explanation": "Dispatching an action for *every* individual WebSocket message (50x/sec) forces React to run its reconciliation cycle 50 times per second, which consumes the main thread and causes jank. Batching updates or using a throttle/debounce strategy would fix this."
+}

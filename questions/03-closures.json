@@ -1,0 +1,12 @@
+{
+  "id": "q-closures",
+  "question": "What will this code output?\n\n```javascript\nfunction outer() {\n  let count = 0;\n  return function inner() {\n    count++;\n    return count;\n  };\n}\n\nconst counter = outer();\nconsole.log(counter());\nconsole.log(counter());\n```",
+  "options": [
+    { "text": "1, 1", "correct": false },
+    { "text": "1, 2", "correct": true },
+    { "text": "0, 1", "correct": false },
+    { "text": "undefined, undefined", "correct": false }
+  ],
+  "explanation": "This demonstrates a **closure**. The inner function maintains access to the `count` variable from the outer function's scope, even after `outer()` has finished executing.\n\nEach call to `counter()` increments the same `count` variable:\n- First call: `count` becomes 1, returns 1\n- Second call: `count` becomes 2, returns 2\n\nClosures are powerful for creating private variables and factory functions in JavaScript.",
+  "category": "JavaScript Scope"
+}

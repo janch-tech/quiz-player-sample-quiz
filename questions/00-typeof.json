@@ -1,0 +1,12 @@
+{
+  "id": "q-typeof-null",
+  "question": "What is the output of `typeof null` in JavaScript?",
+  "options": [
+    { "text": "\"null\"", "correct": false },
+    { "text": "\"object\"", "correct": true },
+    { "text": "\"undefined\"", "correct": false },
+    { "text": "\"number\"", "correct": false }
+  ],
+  "explanation": "In JavaScript, `typeof null` returns `'object'`. This is a **well-known quirk** that exists for historical reasons and is considered a bug that can't be fixed without breaking existing code.\n\nThe correct type of `null` should be `'null'`, but it has remained `'object'` since the early days of JavaScript.",
+  "category": "JavaScript Types"
+}

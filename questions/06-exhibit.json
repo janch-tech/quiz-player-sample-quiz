@@ -1,0 +1,31 @@
+{
+    "id": "q-js-perf-exhibit",
+    "category": "JavaScript Performance",
+    "question": "You are analyzing the performance of a web application. Review the **Memory Profile** in the exhibit. What is the most likely cause of the memory leak shown?",
+    "exhibits": [
+        {
+            "title": "Memory Profile",
+            "type": "markdown",
+            "content": "### Heap Snapshot\n\n| Constructor | Retained Size | Count |\n|---|---|---|\n| `Detached HTMLDivElement` | 45 MB | 15,000 |\n| `(Closure)` | 12 MB | 5,000 |\n| `Object` | 8 MB | 10,000 |\n\n**Observation**: The number of Detached DOM nodes increases steadily over time as the user navigates between pages, but never decreases."
+        }
+    ],
+    "options": [
+        {
+            "text": "Global variables retaining references to huge arrays",
+            "correct": false
+        },
+        {
+            "text": "Event listeners on removed DOM elements not being removed",
+            "correct": true
+        },
+        {
+            "text": "Too many console.log statements",
+            "correct": false
+        },
+        {
+            "text": "Inefficient CSS selectors",
+            "correct": false
+        }
+    ],
+    "explanation": "The presence of many **Detached HTMLDivElements** typically indicates that DOM nodes have been removed from the document tree but are still referenced by JavaScript (usually via event listeners or closures), preventing garbage collection."
+}
