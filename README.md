@@ -4,19 +4,7 @@
 
 This is a sample quiz repository demonstrating the Quiz Player format.
 
-## Testing Locally
 
-Start a local server from the project root:
-
-```bash
-# From the quiz-player directory
-python3 -m http.server 8000
-```
-
-Then open:
-```
-http://localhost:8000/?local=sample-question-repo
-```
 
 ## Structure
 
