@@ -3,7 +3,7 @@
     "category": "JavaScript Internals",
     "question": "Based on the diagram below, which queue has higher priority in the Event Loop processing order?",
     "images": [
-        "public/sample-question-repo/assets/images/event_loop_diagram.svg"
+        "assets/images/event_loop_diagram.svg"
     ],
     "options": [
         {

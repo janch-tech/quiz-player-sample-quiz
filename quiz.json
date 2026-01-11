@@ -3,7 +3,7 @@
   "description": "A comprehensive set of sample questions demonstrating all quiz features.",
   "slug": "javascript-fundamentals",
   "category": "JavaScript",
-  "preview_image": "sample-question-repo/assets/images/event_loop_diagram.svg",
+  "preview_image": "assets/images/event_loop_diagram.svg",
   "logo_url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
   "questions": [
     "questions/00-typeof.json",

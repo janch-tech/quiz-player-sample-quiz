@@ -3,7 +3,7 @@
     "category": "JavaScript Performance",
     "type": "hotspot",
     "question": "Click on the column header in the Chrome DevTools Memory profile that indicates the **total memory used by all reachable objects**.",
-    "image": "public/sample-question-repo/assets/images/heap_snapshot.svg",
+    "image": "assets/images/heap_snapshot.svg",
     "zones": [
         {
             "x1": 0,

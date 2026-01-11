@@ -1,7 +1,7 @@
 {
     "id": "case-study-js-perf-1",
     "category": "High Performance JS",
-    "caseStudy": "public/sample-question-repo/scenarios/mega-dash.json",
+    "caseStudy": "scenarios/mega-dash.json",
     "tabs": [
         {
             "title": "Code Snippet",
